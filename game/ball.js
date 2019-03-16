@@ -84,4 +84,7 @@ Ball.prototype.update = function() {
         // Increases veolocity as the game is played
         this.yVelocity += hitter.yVelocity / 2;
     }
+
+    console.log("this.xVelocity: " + this.xVelocity);
+    console.log("this.yVelocity: " + this.yVelocity);
 }
