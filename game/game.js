@@ -1,4 +1,5 @@
 var socket = io.connect("http://24.16.255.56:8888");
+
 function Game(canvas) {
     var that = this;
     this.canvas = canvas;
@@ -24,25 +25,35 @@ function Game(canvas) {
     }
 
     var save = document.getElementById('save');
-save.onclick = function() {
-  save.innerHTML = "Saved";
-  console.log("saved");
-  socket.emit("save", {studentname:"Carl Argabright", statename:"Pong", data:"Carls Pong Game" });
-  console.log(board);
+
+    if (null !== save) {
+      save.onclick = function() {
+        save.innerHTML = "Saved";
+        console.log("saved");
+        socket.emit("save", {studentname:"Carl Argabright", statename:"Pong", data:"Carls Pong Game" });
+        console.log(game.entities);
+      }
+    }
+
+
+  var load = document.getElementById('load');
+
+    if (null !== load) {
+      load.onclick = function() {
+        load.innerHTML = "Loaded.";
+        socket.emit("load", {studentname: "Carl Argabright", statename: "Pong"});
+
+        socket.on("load", function(data) {
+          console.log(data.data);
+          game.draw();
+        });
+        game.start();
+      }
+    }
 }
 
-var load = document.getElementById('load');
-load.onclick = function() {
-   load.innerHTML = "Loaded.";
-   socket.emit("load", {studentname: "Carl Argabright", statename: "Pong"});
-  
-   socket.on("load", function(data) {
-     console.log(data.data);
-     Game.draw();
-   });
-   Game.start();
-}
-}
+
+
 
 
 Game.keys = {
