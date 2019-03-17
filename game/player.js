@@ -3,7 +3,7 @@ function Player(game) {
     this.game = game;
 
     this.x = 20;
-    this.name = "player"; 
+    this.name = "player";
 
     // Create a new DOM element
     let player = document.createElement("div");
@@ -32,7 +32,7 @@ Player.prototype.draw = function() {
     let player = this.player;
     player.style.left = this.x + 'px';
     player.style.top = this.y + 'px';
-     
+
 }
 
 Player.prototype.update = function() {

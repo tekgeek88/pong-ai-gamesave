@@ -37,7 +37,7 @@ Ball.prototype.draw = function() {
     ball.style.top = this.y + 'px';
 }
 
- 
+
 Ball.prototype.reset = function() {
     this.x = this.game.width / 2 - this. width;
     this.y = this.game.height / 2 - this.height;
@@ -46,13 +46,13 @@ Ball.prototype.reset = function() {
 
     this.yVelocity = Math.floor(Math.random() * (max - min + 1) + min);
     this.xVelocity = Math.random() > 0.5 ? 5 : -5; // 50% chance of choosing left or right to start from
-    
+
 }
 
 
 Ball.prototype.update = function() {
     Entity.prototype.update.apply(this, arguments); // Call update in the parent
-    
+
     // If the ball hits the top or bottom of the screen
     if (this.y > this.game.height - this.height || this.y < 0) {
         this.yVelocity *= -1;  // Switch the direction of the ball
@@ -75,7 +75,7 @@ Ball.prototype.update = function() {
         hitter = this.game.bot;
     } else if (this.intersect(this.game.player)) {
         hitter = this.game.player;
-    }  
+    }
 
     if (hitter) {
         this.xVelocity *= -1.1;
@@ -84,7 +84,4 @@ Ball.prototype.update = function() {
         // Increases veolocity as the game is played
         this.yVelocity += hitter.yVelocity / 2;
     }
-
-    console.log("this.xVelocity: " + this.xVelocity);
-    console.log("this.yVelocity: " + this.yVelocity);
 }

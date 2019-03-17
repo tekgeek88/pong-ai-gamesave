@@ -7,7 +7,7 @@ body {
     max-width: 940px;
     margin: 0 auto;
     padding: 0 5%;
-  }
+}
 
 #game {
     position: relative;
@@ -29,20 +29,20 @@ body {
 #score_player1 {
     /* left: 1500px; */
     top: 50px;
-    background-color: greenyellow; 
+    background-color: greenyellow;
     margin-top: 30px;
     padding-top: 10px;
     padding-bottom: 10px;
     padding-right: 25px;
     padding-left: 25px;
     margin-right: 10px;
-    
+
 }
 
 #score_player2 {
     left: 0px;
     top: 50px;
-    background-color: blue; 
+    background-color: blue;
     color: white;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -80,12 +80,12 @@ footer {
     clear: both;
     padding-top: 25;
     color: #ccc;
-  }
-  
-  .social-icon {
+}
+
+.social-icon {
     width: 20px;
     height: 20px;
     margin: 0 5px;
-  }
+}
 
 /* * { border: 1px solid red; } */

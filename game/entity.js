@@ -20,7 +20,7 @@ Entity.prototype.update = function () {
 // Returns true if the entity intersects the given entity
 Entity.prototype.intersect = function(other) {
     return this.y + this.height > other.y
-        && this.y < other.y + other.height
-        && this.x + this.width > other.x
-        && this.x < other.x + other.width;
+      && this.y < other.y + other.height
+      && this.x + this.width > other.x
+      && this.x < other.x + other.width;
 }
